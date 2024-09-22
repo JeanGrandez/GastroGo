@@ -1,0 +1,36 @@
+<div class="form-container">
+  <h2>Hacer Nueva Reserva</h2>
+
+  <form (ngSubmit)="hacerReserva()" #reservaForm="ngForm">
+    <!-- Campo Restaurante -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Restaurante</mat-label>
+      <mat-select [(ngModel)]="nuevaReserva.restaurante_id" name="restaurante" required>
+        <mat-option *ngFor="let restaurante of restaurantes" [value]="restaurante.id">
+          {{restaurante.nombre}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Campo Fecha -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="nuevaReserva.fecha" name="fecha" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Campo Personas -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Personas</mat-label>
+      <input matInput type="number" min="1" [(ngModel)]="nuevaReserva.personas" name="personas" required>
+    </mat-form-field>
+
+    <!-- Botón para hacer la reserva -->
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!reservaForm.form.valid">
+        <mat-icon>check_circle</mat-icon> Reservar
+      </button>
+    </div>
+  </form>
+</div>
