@@ -7,7 +7,7 @@ import {SeleccionUsuarioComponent} from "./components/seleccion-usuario/seleccio
 const routes: Routes = [
   { path: 'reservas', component: ListaReservasComponent },
   { path: 'nueva-reserva', component: NuevaReservaComponent },
-  { path: 'usuario', component: SeleccionUsuarioComponent },
+  { path: 'usuarios', component: SeleccionUsuarioComponent },
   { path: '', redirectTo: '/reservas', pathMatch: 'full' },
   { path: '**', redirectTo: '/reservas' }
 ];
