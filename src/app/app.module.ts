@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ListaReservasComponent } from './components/lista-reservas/lista-reservas.component';  // Componente ListaReservas
 import { NuevaReservaComponent } from './components/nueva-reserva/nueva-reserva.component';  // Componente NuevaReserva
+import { SeleccionUsuarioComponent } from './components/seleccion-usuario/seleccion-usuario.component'; // Componente SeleccionUsuario
 
 // Módulos de Angular Material
 import { MatInputModule } from '@angular/material/input';
@@ -26,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';    // Para las tarjetas 
 const routes: Routes = [
   { path: 'reservas', component: ListaReservasComponent },  // Ruta para la lista de reservas
   { path: 'nueva-reserva', component: NuevaReservaComponent },  // Ruta para crear una nueva reserva
+  { path: 'seleccion-usuario', component: SeleccionUsuarioComponent }, // Ruta para seleccionar el usuario
   { path: '', redirectTo: '/reservas', pathMatch: 'full' }  // Ruta predeterminada que redirige a lista de reservas
 ];
 
@@ -34,6 +36,7 @@ const routes: Routes = [
     AppComponent,
     ListaReservasComponent,  // Declaración del componente ListaReservas
     NuevaReservaComponent,  // Declaración del componente NuevaReserva
+    SeleccionUsuarioComponent  // Declaración del componente SeleccionUsuario
   ],
   imports: [
     BrowserModule,
