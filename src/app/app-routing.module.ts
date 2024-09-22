@@ -5,10 +5,11 @@ import { NuevaReservaComponent } from './components/nueva-reserva/nueva-reserva.
 import {SeleccionUsuarioComponent} from "./components/seleccion-usuario/seleccion-usuario.component";
 
 const routes: Routes = [
-  { path: 'usuario', component: SeleccionUsuarioComponent },
   { path: 'reservas', component: ListaReservasComponent },
   { path: 'nueva-reserva', component: NuevaReservaComponent },
-  { path: '', redirectTo: '/reservas', pathMatch: 'full' }
+  { path: 'usuario', component: SeleccionUsuarioComponent },
+  { path: '', redirectTo: '/reservas', pathMatch: 'full' },
+  { path: '**', redirectTo: '/reservas' }
 ];
 
 @NgModule({
